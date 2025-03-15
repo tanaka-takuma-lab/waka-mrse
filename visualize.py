@@ -24,7 +24,7 @@ def main():
         counts.append(count)
         knn10s.append(knn10)
         knn23s.append(knn23)
-        networknames.append(f'Network {i}')
+        networknames.append(f'Model {i}')
     
     dirname0 = dirnames[0]
     label0 = labels[0]
@@ -109,7 +109,7 @@ def plot_original_reverse_shuffle(gss, ylabel, fname, ylim=None, panel=None, lef
     plt.scatter(x, average_rank_original, label='Real', marker='^', s=10, zorder=2)
     plt.scatter(x, average_rank_reverse, label='Reverse', marker='v', s=10, zorder=1)
     plt.scatter(xx, average_rank_shuffle, label='Shuffled', marker='x', s=10, zorder=0)
-    plt.xlabel('Neural network')
+    plt.xlabel('Language model')
     plt.ylabel(ylabel)
     plt.xticks(x)
     plt.legend(handletextpad=0, frameon=False, loc='lower center',
@@ -190,7 +190,7 @@ def get_congruence_between_network(dirname, gs1, gs2, codes):
         congruence[c] = (res_congruence.statistic, res_congruence.pvalue)
     return congruence
 
-def plot_degree_correlation(results_list, codes, fname, xlabel='Phylogenetic tree', panel=None):
+def plot_degree_correlation(results_list, codes, fname, xlabel='Phylogenetic network', panel=None):
     fig = plt.figure(figsize=(5.5, 3))
     ax = fig.add_subplot(111)
     plt.subplots_adjust(0.15, 0.2, 0.95, 0.95)
